@@ -1,0 +1,32 @@
+def check_char_type(char):
+  """
+  Checks if a given character is a vowel, a consonant, or neither.
+
+  Args:
+    char: The character to check (string of length 1).
+
+  Returns:
+    A string indicating if the character is a "Vowel", "Consonant",
+    or "Not an alphabet".
+  """
+  if not isinstance(char, str) or len(char) != 1:
+    return "Please provide a single character."
+
+  char_lower = char.lower()
+  if 'a' <= char_lower <= 'z':
+    if char_lower in ['a', 'e', 'i', 'o', 'u']:
+      return "Vowel"
+    else:
+      return "Consonant"
+  else:
+    return "Not an alphabet"
+
+# --- Example Usage ---
+print(f"'a' is: {check_char_type('a')}")
+print(f"'B' is: {check_char_type('B')}")
+print(f"'e' is: {check_char_type('e')}")
+print(f"'z' is: {check_char_type('z')}")
+print(f"'7' is: {check_char_type('7')}")
+print(f"'$' is: {check_char_type('$')}")
+print(f"'AE' is: {check_char_type('AE')}")
+print(f"'' is: {check_char_type('')}")
